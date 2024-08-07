@@ -15,10 +15,13 @@ body {
   flex-direction: column;
   justify-content: start;
   align-items: center;
+
+  overflow-x: hidden;
 }
 
 .page--container {
   width: 50%;
+  height: auto;
 }
 .navbar--container {
   width: 100%;
@@ -98,31 +101,103 @@ span {
   font-size: clamp(0.8rem, 2vw, 1rem);
   border-radius: 6%;
 }
-/* CARD SECTION */
-#card {
+
+.hero--btn:hover {
+  cursor: pointer;
 }
+/* CARD SECTION */
 
 h2 {
   text-transform: uppercase;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  display: flex;
+  justify-content: center;
 }
 
 .card--container {
   display: flex;
-  text-align: center;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px; /* Adjust gap between cards as needed */
+  padding: 16px;
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: start;
+  text-align: start;
+  justify-content: space-evenly;
 
   width: 300px;
-  height: 250px;
+  height: 270px;
   background-color: #1f2125;
   border-radius: 10px;
+  padding: 15px;
+}
+
+.card p:first-of-type {
+  font-size: 20px;
+  font-weight: 700;
 }
 
 .card i {
   background-color: #f9ac54;
+  font-size: 25px;
+  padding: 10px;
+  border-radius: 7px;
+}
+
+.card:hover {
+  transition-delay: 0.1s;
+  outline-color: #f9ac54;
+  outline-style: inset;
+  background-color: #383b41;
+}
+
+/* GYM CLASSES SECTION */
+#class {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+}
+
+.class-images {
+  width: 50%;
+}
+
+.class--text {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 2vw, 2rem);
+}
+
+.class--btn {
+  width: 115px;
+  height: 60px;
+  margin-top: 1rem;
+  background-color: #f9ac54;
+  font-weight: 500;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  border-radius: 6%;
+}
+
+.class--btn:hover {
+  cursor: pointer;
+}
+
+.main--img {
+  max-width: 500px;
+  border-radius: 10px;
+}
+.corner--img {
+  max-width: 300px;
+  border-radius: 10px;
+  position: relative;
+  top: -80px;
+  right: 70px;
 }
