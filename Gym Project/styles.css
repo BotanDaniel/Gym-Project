@@ -9,26 +9,29 @@
 body {
   background-color: rgb(17, 19, 23);
   font-family: "Poppins", sans-serif;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
-
-  overflow-x: hidden;
 }
 
 .page--container {
   width: 50%;
   height: auto;
 }
+
+/* NAVBAR SECTION */
+
+/* NAVBAR STYLES */
 .navbar--container {
   width: 100%;
   height: 5rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
+  position: relative;
 }
 
 .navbar--container img {
@@ -36,17 +39,20 @@ body {
   height: 35px;
 }
 
-.navbar--links__container a {
-  margin: 1.3rem;
-  list-style-type: none;
+.navbar--links__container {
+  display: flex;
+  list-style: none;
+}
+
+.navbar--links__container li a {
+  margin: 0.5rem;
   text-decoration: none;
-  font-size: clamp(0.7rem, 2vw, 1rem);
+  font-size: clamp(0.5rem, 2vw, 0.8=8rem);
 }
 
 .navbar--btn {
-  width: 115px;
+  min-width: 100px;
   height: 60px;
-  margin: 2rem;
   background-color: #f9ac54;
   font-weight: 500;
   font-size: clamp(0.8rem, 2vw, 1rem);
@@ -55,6 +61,48 @@ body {
 
 .navbar--btn:hover {
   cursor: pointer;
+}
+
+/* RESPONSIVE NAVBAR FOR MOBILE SCREENS */
+@media only screen and (max-width: 900px) {
+  .navbar--links__container {
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    right: 0;
+    background-color: #111317;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    display: none;
+  }
+
+  .navbar--links__container.active {
+    display: flex;
+  }
+
+  .navbar--btn {
+    margin: 1rem 0;
+  }
+
+  .menu-icon {
+    font-size: 2rem;
+    cursor: pointer;
+    display: block;
+    color: white;
+  }
+  nav img,
+  button {
+    display: none;
+  }
+}
+
+/* HIDE MENU ICON ON LARGER SCREENS */
+@media (min-width: 901px) {
+  .menu-icon {
+    display: none;
+  }
 }
 
 /* HERO SECTION */
@@ -110,6 +158,8 @@ span {
 @media only screen and (max-width: 900px) {
   #hero {
     flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
   }
 
   .hero--text {
@@ -133,13 +183,19 @@ span {
     margin-bottom: 10%;
     margin-top: 3%;
   }
+
+  .hero--img {
+    max-height: 60%;
+    max-width: 60%;
+    margin-bottom: 10%;
+  }
 }
 
 /* CARD SECTION */
 
 h2 {
   text-transform: uppercase;
-  font-size: clamp(1.5rem, 2vw, 2rem);
+  font-size: clamp(1.2rem, 1.5vw, 1.5rem);
   display: flex;
   justify-content: center;
 }
@@ -222,17 +278,18 @@ h2 {
   height: auto;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: row;
 
   margin-top: 13%;
 }
 
 .class-images {
-  width: 50%;
+  width: 40%;
 }
 
 .class--text {
-  width: 50%;
+  width: 60%;
   display: flex;
   flex-direction: column;
 }
@@ -256,7 +313,7 @@ h3 {
 }
 
 .main--img {
-  max-width: 500px;
+  max-width: 100%;
   border-radius: 10px;
 }
 .corner--img {
@@ -267,7 +324,7 @@ h3 {
   right: 70px;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1785px) {
   #gym--class {
     display: flex;
     align-items: center;
@@ -275,12 +332,12 @@ h3 {
   }
 
   .corner--img {
-    position: relative;
-    left: 250px;
+    display: none;
   }
 
   .class--text {
     width: 100%;
+    margin-top: 3%;
   }
 }
 
@@ -288,6 +345,7 @@ h3 {
 
 #joinus {
   margin-top: 4rem;
+  margin-bottom: 7%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -295,13 +353,13 @@ h3 {
 }
 
 h4 {
-  font-size: clamp(3rem, 2vw, 5rem);
+  font-size: clamp(2rem, 2vw, 4rem);
   margin-top: 5%;
 }
 
 .joinus--text {
   text-align: center;
-  width: 40%;
+  width: 80%;
   margin-bottom: 4%;
   margin-top: 15px;
 }
@@ -328,7 +386,7 @@ h4 {
 }
 
 .card--title {
-  font-size: clamp(0.7rem, 2vw, 1.3rem);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
 }
 
 .join--cards i {
@@ -338,6 +396,26 @@ h4 {
   border-radius: 7px;
 }
 
+@media only screen and (max-width: 1785px) {
+  .join--cards {
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    padding: 20px;
+  }
+
+  .joinus--img {
+    max-width: 100%;
+  }
+
+  h4 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
 /* PRICING CARD SECTION */
 #pricing--section {
   margin-top: 4%;
@@ -375,16 +453,26 @@ ul i {
   color: #f9ac54;
 }
 .pricing--card__container {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-rows: auto;
+  grid-gap: 30px; /* Adjust grid gap as needed */
+}
+
+@media (max-width: 1024px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* 1 column on mobile devices */
+  }
+  .pricing--card {
+    width: 90%;
+  }
 }
 
 .pricing--card {
-  width: 70%;
+  width: 100%;
   height: 500px;
   background-color: #1f2125;
   border-radius: 10px;
-  margin: 17px;
 }
 
 .pricing--card:hover {
@@ -395,7 +483,7 @@ ul i {
 }
 
 .card--content {
-  width: 80%;
+  width: 100%;
   height: 70%;
 
   display: flex;
@@ -509,7 +597,7 @@ h6 {
 
 .footer--title {
   font-weight: 800;
-  font-size: clamp(0.9rem, 1.5vw, 1.3rem);
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
   margin-bottom: 10px;
 }
 
