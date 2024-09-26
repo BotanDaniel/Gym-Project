@@ -584,21 +584,90 @@ h6 {
 }
 /* FOOTER SECTION */
 
-.footer--section {
+footer {
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: auto;
+  background-color: #111317;
+  padding: 60px 10%;
 }
 
-.footer--section p:not([class]):hover {
-  color: #f9ac54;
-  cursor: pointer;
+footer ul {
+  list-style: none;
 }
 
-.footer--title {
-  font-weight: 800;
-  font-size: clamp(1rem, 1.5vw, 1.3rem);
-  margin-bottom: 10px;
+.footer--col {
+  width: 25%;
+}
+
+.footer--col p {
+  position: relative;
+  margin-bottom: 30px;
+  font-weight: 400;
+  font-size: 22px;
+  text-transform: capitalize;
+}
+
+.footer--col p::before {
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  background-color: #27c0ac;
+  height: 2px;
+  width: 40px;
+}
+
+footer ul li:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+footer ul li a {
+  display: block;
+  font-size: 19px;
+  text-transform: capitalize;
+  color: #bdb6b6;
+  text-decoration: none;
+  transition: 0.4s;
+}
+
+footer ul li a:hover {
+  color: white;
+  padding-left: 2px;
+}
+
+.links a {
+  display: inline-block;
+  height: 44px;
+  width: 44px;
+  color: white;
+  background-color: #f9ac54;
+  margin: 0 8px 8px 0;
+  text-align: center;
+  line-height: 44px;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+.links a:hover {
+  background-color: #1f2125;
+}
+
+@media (max-width: 740px) {
+  .footer--col {
+    width: 50%;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .footer--col p::before {
+    all: unset;
+  }
+}
+
+@media (max-width: 555px) {
+  .footer--col {
+    width: 100%;
+  }
 }
 
 /* ////////////////////// */
