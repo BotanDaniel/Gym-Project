@@ -10,7 +10,8 @@
     ></script>
   </head>
   <link rel="stylesheet" href="styles.css" />
-  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css">
+  <script  type="module" src="script.js"></script>
 
   <body>
     <div class="page--container">
@@ -23,11 +24,11 @@
               <img src="./assets/logo.png" alt="logoImg" />
             
               <ul class="navbar--links__container">
-                <li><a href="">Home</a></li>
-                <li><a href="">Program</a></li>
-                <li><a href="">Service</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Community</a></li>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#card">Program</a></li>
+                <li><a href="#gym--class">Service</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#about">Community</a></li>
               </ul>
             
               <button class="navbar--btn">Join Now</button>
@@ -95,7 +96,7 @@
       </section>
 
    <!-- GYM CALSES SECTION  -->
-    <section id="gym--class" class="hidden">
+    <section id="gym--class" class="hidden-right">
         <div class="class--images">
           <img src="/assets/class-1.jpg" alt="" class="main--img" />
           <img src="/assets/class-2.jpg" alt="" class="corner--img" />
@@ -122,26 +123,26 @@
           Our diverse membership base creates a friendly and supportive
           atmosphere, where you can make friends and stay motivated.
         </p>
-        <img src="/assets/join.jpg" alt="" class="joinus--img" />
+        <img src="/assets/join.jpg" alt="" class="joinus--img " />
 
         <!-- cards grid -->
         <div class="join--cards">
           <div>
             <i class="fa-solid fa-star"></i>
-            <p class="card--title">Lorem, ipsum.</p>
-            <p>Lorem ipsum dolor sit amet.</p>
+            <p class="card--title">Trainers</p>
+            <p>We have experience trainers</p>
           </div>
 
           <div>
             <i class="fa-solid fa-video"></i>
-            <p class="card--title">Lorem, ipsum.</p>
-            <p>Lorem ipsum dolor sit amet.</p>
+            <p class="card--title">Equipment</p>
+            <p>Brand new equipment for you</p>
           </div>
 
           <div>
             <i class="fa-solid fa-calendar-days"></i>
-            <p class="card--title">Lorem, ipsum.</p>
-            <p>Lorem ipsum dolor sit amet.</p>
+            <p class="card--title">Friends</p>
+            <p>Make new and cool friends </p>
           </div>
         </div>
       </section>
@@ -199,33 +200,10 @@
         </div>
       </section>
   
-      <!-- REVIEW SECTION -->
-<section id="review--section">
-
-  <h6>MEMBER REVIEW</h6>
-  <p class="review--text">What truly sets this gym apart is their expert team
-   of trainers. The trainers are knowledgeable, approachable, and genuinely 
-   invested in helping members achieve their fitness goals. They take the time to 
-   understand individual needs and create personalized workout plans, ensuring maximum 
-   results and safety.</p>
-
-   <div class="review--person--container">
-    <img src="/assets/member.jpg" alt="">
-      <div class="review--text--container">
-        <p>Jhon Doe</p>
-        <p>Front End Developer</p>
-      </div>
-   </div>
-  
-   <div class="arrows--container">
-     <i class="fa-solid fa-arrow-left"></i>
-    <i class="fa-solid fa-arrow-right"></i>
-   </div>
-
-</section>
+      
 
  <!-- FOOTER SECTION -->
- <footer>
+ <footer id="about">
 
   <div class="footer--col">
     <p>Abotu Us</p>
@@ -273,7 +251,7 @@
 
 
   </footer>
- 
+
+  
   </body>
 </html>
-     
